@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "defiledlands:stone_defiled_bricks"
+          "name": "defiledlands:defiled_stone_bricks"
         }
       ],
       "conditions": [

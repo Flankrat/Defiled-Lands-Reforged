@@ -2,6 +2,7 @@ package lykrast.defiledlands.common.world.feature;
 
 import com.mojang.serialization.Codec;
 import lykrast.defiledlands.common.registry.ModBlocks;
+import lykrast.defiledlands.common.util.CorruptionHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
@@ -18,9 +19,15 @@ public class ConjuringAltarFeature extends Feature<NoneFeatureConfiguration> {
 
     @Override
     public boolean place(FeaturePlaceContext<NoneFeatureConfiguration> context) {
+        if (!CorruptionHelper.altarEnabled) return false;
+
         WorldGenLevel level = context.level();
         BlockPos pos = context.origin();
         RandomSource random = context.random();
+
+        if (CorruptionHelper.altarExtraRarity > 1 && random.nextInt(CorruptionHelper.altarExtraRarity) != 0) {
+            return false;
+        }
 
         while (level.isEmptyBlock(pos) && pos.getY() > level.getMinBuildHeight() + 2) {
             pos = pos.below();

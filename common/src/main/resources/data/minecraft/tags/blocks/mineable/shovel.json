@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "defiledlands:grass_defiled",
+    "defiledlands:defiled_dirt",
+    "defiledlands:gravel_defiled",
+    "defiledlands:sand_defiled"
+  ]
+}

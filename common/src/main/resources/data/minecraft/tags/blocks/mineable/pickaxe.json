@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    "defiledlands:stone_corrupted",
+    "defiledlands:stone_defiled",
+    "defiledlands:sandstone_defiled",
+    "defiledlands:defiled_stone_bricks",
+    "defiledlands:mossy_defiled_stone",
+    "defiledlands:mossy_defiled_stone_bricks",
+    "defiledlands:cracked_defiled_stone_bricks",
+    "defiledlands:ravaging_stone",
+    "defiledlands:ravaging_bricks",
+    "defiledlands:hephaestite_ore",
+    "defiledlands:umbrium_ore",
+    "defiledlands:scarlite_ore",
+    "defiledlands:hephaestite_block",
+    "defiledlands:scarlite_block",
+    "defiledlands:umbrium_block",
+    "defiledlands:healing_pad",
+    "defiledlands:conjuring_altar",
+    "defiledlands:glass_obscure",
+    "defiledlands:stone_defiled_stairs",
+    "defiledlands:sandstone_defiled_stairs",
+    "defiledlands:stone_defiled_bricks_stairs",
+    "defiledlands:stone_defiled_slab",
+    "defiledlands:sandstone_defiled_slab",
+    "defiledlands:stone_defiled_bricks_slab"
+  ]
+}

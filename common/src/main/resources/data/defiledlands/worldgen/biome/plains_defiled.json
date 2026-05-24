@@ -63,7 +63,13 @@
     "water_ambient": [],
     "misc": []
   },
-  "spawn_costs": {},
+  "spawn_costs": {
+    "defiledlands:shambler": {"energy_budget": 0.15, "charge": 0.12},
+    "defiledlands:shambler_twisted": {"energy_budget": 0.15, "charge": 0.12},
+    "defiledlands:scuttler": {"energy_budget": 0.15, "charge": 0.12},
+    "defiledlands:host": {"energy_budget": 0.15, "charge": 0.12},
+    "defiledlands:slime_defiled": {"energy_budget": 0.15, "charge": 0.12}
+  },
   "carvers": {
     "air": [
       "minecraft:cave",

@@ -29,6 +29,7 @@ public class ModCreativeTabs {
                 ModItems.SCUTTLER_EYE,
                 ModItems.FOUL_CANDY,
                 ModItems.UMBRIUM_INGOT,
+                ModItems.RAW_UMBRIUM,
                 ModItems.UMBRIUM_NUGGET,
                 ModItems.RAVAGING_INGOT,
                 ModItems.BOOK_WYRM_SCALE,

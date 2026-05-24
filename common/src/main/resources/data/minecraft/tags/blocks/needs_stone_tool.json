@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "defiledlands:hephaestite_ore",
+    "defiledlands:umbrium_ore",
+    "defiledlands:hephaestite_block",
+    "defiledlands:umbrium_block"
+  ]
+}

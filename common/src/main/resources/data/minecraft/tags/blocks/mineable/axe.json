@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "defiledlands:tenebra_log",
+    "defiledlands:tenebra_planks",
+    "defiledlands:tenebra_door",
+    "defiledlands:tenebra_stairs",
+    "defiledlands:tenebra_slab"
+  ]
+}

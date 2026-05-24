@@ -5,12 +5,27 @@ import dev.architectury.registry.registries.RegistrySupplier;
 import lykrast.defiledlands.common.DefiledLands;
 import lykrast.defiledlands.common.block.*;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.material.MapColor;
 
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(DefiledLands.MOD_ID, Registries.BLOCK);
+
+    private static BlockBehaviour.Properties stonelike() {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                .instrument(NoteBlockInstrument.BASEDRUM)
+                .strength(1.5F, 6.0F).sound(SoundType.STONE);
+    }
+
+    private static BlockBehaviour.Properties stoneBrickslike() {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                .instrument(NoteBlockInstrument.BASEDRUM)
+                .strength(1.5F, 6.0F).sound(SoundType.STONE);
+    }
 
     public static final RegistrySupplier<Block> GRASS_DEFILED = BLOCKS.register("grass_defiled",
             () -> new GrassDefiledBlock(BlockBehaviour.Properties.copy(Blocks.GRASS_BLOCK).randomTicks()));
@@ -21,24 +36,24 @@ public class ModBlocks {
     public static final RegistrySupplier<Block> SAND_DEFILED = BLOCKS.register("sand_defiled",
             () -> new DefiledFallingBlock(BlockBehaviour.Properties.copy(Blocks.SAND)));
     public static final RegistrySupplier<Block> SANDSTONE_CORRUPTED = BLOCKS.register("sandstone_defiled",
-            () -> new DefiledBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE)));
+            () -> new DefiledBlock(stonelike().strength(0.8F)));
     public static final RegistrySupplier<Block> STONE_CORRUPTED = BLOCKS.register("stone_corrupted",
-            () -> new DefiledBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new DefiledBlock(stonelike()));
     public static final RegistrySupplier<Block> STONE_DEFILED = BLOCKS.register("stone_defiled",
-            () -> new DefiledBlock(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new DefiledBlock(stonelike()));
 
     public static final RegistrySupplier<Block> STONE_BRICKS_DEFILED = BLOCKS.register("defiled_stone_bricks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+            () -> new Block(stoneBrickslike()));
     public static final RegistrySupplier<Block> MOSSY_STONE_DEFILED = BLOCKS.register("mossy_defiled_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_COBBLESTONE)));
+            () -> new Block(stonelike().strength(2.0F, 6.0F)));
     public static final RegistrySupplier<Block> MOSSY_STONE_BRICKS_DEFILED = BLOCKS.register("mossy_defiled_stone_bricks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.MOSSY_STONE_BRICKS)));
+            () -> new Block(stoneBrickslike()));
     public static final RegistrySupplier<Block> CRACKED_STONE_BRICKS_DEFILED = BLOCKS.register("cracked_defiled_stone_bricks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.CRACKED_STONE_BRICKS)));
+            () -> new Block(stoneBrickslike()));
     public static final RegistrySupplier<Block> RAVAGING_STONE = BLOCKS.register("ravaging_stone",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE)));
+            () -> new Block(stonelike()));
     public static final RegistrySupplier<Block> RAVAGING_BRICKS = BLOCKS.register("ravaging_bricks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.STONE_BRICKS)));
+            () -> new Block(stoneBrickslike()));
 
     public static final RegistrySupplier<Block> HEPHAESTITE_ORE = BLOCKS.register("hephaestite_ore",
             () -> new DefiledBlock(BlockBehaviour.Properties.copy(Blocks.IRON_ORE)));
@@ -70,9 +85,9 @@ public class ModBlocks {
             () -> new VilespineBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH).randomTicks()));
 
     public static final RegistrySupplier<Block> HEALING_PAD = BLOCKS.register("healing_pad",
-            () -> new HealingPadBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().lightLevel(s -> 4)));
+            () -> new HealingPadBlock(stonelike().noOcclusion().lightLevel(s -> 4)));
     public static final RegistrySupplier<Block> CONJURING_ALTAR = BLOCKS.register("conjuring_altar",
-            () -> new ConjuringAltarBlock(BlockBehaviour.Properties.copy(Blocks.STONE).noOcclusion().lightLevel(s -> 7)));
+            () -> new ConjuringAltarBlock(stonelike().noOcclusion().lightLevel(s -> 7)));
     public static final RegistrySupplier<Block> GLASS_OBSCURE = BLOCKS.register("glass_obscure",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.GLASS).noOcclusion()));
 
@@ -81,20 +96,20 @@ public class ModBlocks {
                     net.minecraft.world.level.block.state.properties.BlockSetType.OAK));
 
     public static final RegistrySupplier<Block> STONE_DEFILED_STAIRS = BLOCKS.register("stone_defiled_stairs",
-            () -> new StairBlock(STONE_DEFILED.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_STAIRS)));
+            () -> new StairBlock(STONE_DEFILED.get().defaultBlockState(), stonelike()));
     public static final RegistrySupplier<Block> SANDSTONE_DEFILED_STAIRS = BLOCKS.register("sandstone_defiled_stairs",
-            () -> new StairBlock(SANDSTONE_CORRUPTED.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.SANDSTONE_STAIRS)));
+            () -> new StairBlock(SANDSTONE_CORRUPTED.get().defaultBlockState(), stonelike().strength(0.8F)));
     public static final RegistrySupplier<Block> STONE_BRICKS_DEFILED_STAIRS = BLOCKS.register("stone_defiled_bricks_stairs",
-            () -> new StairBlock(STONE_BRICKS_DEFILED.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_STAIRS)));
+            () -> new StairBlock(STONE_BRICKS_DEFILED.get().defaultBlockState(), stoneBrickslike()));
     public static final RegistrySupplier<Block> TENEBRA_STAIRS = BLOCKS.register("tenebra_stairs",
             () -> new StairBlock(TENEBRA_PLANKS.get().defaultBlockState(), BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
 
     public static final RegistrySupplier<Block> STONE_DEFILED_SLAB = BLOCKS.register("stone_defiled_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_SLAB)));
+            () -> new SlabBlock(stonelike()));
     public static final RegistrySupplier<Block> SANDSTONE_DEFILED_SLAB = BLOCKS.register("sandstone_defiled_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.SANDSTONE_SLAB)));
+            () -> new SlabBlock(stonelike().strength(0.8F)));
     public static final RegistrySupplier<Block> STONE_BRICKS_DEFILED_SLAB = BLOCKS.register("stone_defiled_bricks_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BRICK_SLAB)));
+            () -> new SlabBlock(stoneBrickslike()));
     public static final RegistrySupplier<Block> TENEBRA_SLAB = BLOCKS.register("tenebra_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
 

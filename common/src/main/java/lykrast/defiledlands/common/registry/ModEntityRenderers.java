@@ -19,6 +19,9 @@ public class ModEntityRenderers {
         EntityRendererRegistry.register(ModEntityTypes.MOURNER, lykrast.defiledlands.client.render.entity.MournerRenderer::new);
         EntityRendererRegistry.register(ModEntityTypes.BOOK_WYRM, lykrast.defiledlands.client.render.entity.BookWyrmRenderer::new);
 
+        EntityRendererRegistry.register(ModEntityTypes.BLASTEM_FRUIT, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
+        EntityRendererRegistry.register(ModEntityTypes.BLASTEM_FRUIT_BLAZING, net.minecraft.client.renderer.entity.ThrownItemRenderer::new);
+
         dev.architectury.registry.client.level.entity.EntityModelLayerRegistry.register(ModModelLayers.DESTROYER, lykrast.defiledlands.client.model.DestroyerModel::createBodyLayer);
         dev.architectury.registry.client.level.entity.EntityModelLayerRegistry.register(ModModelLayers.MOURNER, lykrast.defiledlands.client.model.MournerModel::createBodyLayer);
         dev.architectury.registry.client.level.entity.EntityModelLayerRegistry.register(ModModelLayers.BOOK_WYRM, lykrast.defiledlands.client.model.BookWyrmModel::createBodyLayer);

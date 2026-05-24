@@ -27,6 +27,8 @@ public class ModItems {
 
     public static final RegistrySupplier<Item> UMBRIUM_INGOT = ITEMS.register("umbrium_ingot",
             () -> new Item(new Item.Properties()));
+    public static final RegistrySupplier<Item> RAW_UMBRIUM = ITEMS.register("raw_umbrium",
+            () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> UMBRIUM_NUGGET = ITEMS.register("umbrium_nugget",
             () -> new Item(new Item.Properties()));
     public static final RegistrySupplier<Item> RAVAGING_INGOT = ITEMS.register("ravaging_ingot",

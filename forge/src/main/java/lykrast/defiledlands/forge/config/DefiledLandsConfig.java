@@ -33,6 +33,8 @@ public class DefiledLandsConfig {
                 CorruptionHelper.wyrmConversionRate = COMMON.wyrmConversionRate.get();
                 CorruptionHelper.biomeRegionWeight = COMMON.biomeRegionWeight.get();
                 CorruptionHelper.dungeonEnabled = COMMON.dungeonEnabled.get();
+                CorruptionHelper.altarEnabled = COMMON.altarEnabled.get();
+                CorruptionHelper.altarExtraRarity = COMMON.altarExtraRarity.get();
         }
 
         private static class Common {
@@ -47,6 +49,8 @@ public class DefiledLandsConfig {
                 final ForgeConfigSpec.DoubleValue wyrmConversionRate;
                 final ForgeConfigSpec.IntValue biomeRegionWeight;
                 final ForgeConfigSpec.BooleanValue dungeonEnabled;
+                final ForgeConfigSpec.BooleanValue altarEnabled;
+                final ForgeConfigSpec.IntValue altarExtraRarity;
 
                 Common(ForgeConfigSpec.Builder builder) {
                         builder.comment("General configuration").push("general");
@@ -96,6 +100,20 @@ public class DefiledLandsConfig {
                                                         "If true, defiled dungeons will generate underground in defiled biomes.",
                                                         "Default: true.")
                                         .define("dungeonEnabled", true);
+
+                        altarEnabled = builder
+                                        .comment(
+                                                        "If true, conjuring altars will generate in defiled biomes.",
+                                                        "Default: true.")
+                                        .define("altarEnabled", true);
+
+                        altarExtraRarity = builder
+                                        .comment(
+                                                        "Extra rarity multiplier for conjuring altar generation.",
+                                                        "The base rarity is already set by the placed_feature JSON (1 in 32 chunks).",
+                                                        "This value further divides the chance: 1 = no change, 2 = half as common, 4 = quarter, etc.",
+                                                        "Default: 1.")
+                                        .defineInRange("altarExtraRarity", 1, 1, 100);
 
                         builder.pop();
 

@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "defiledlands:dirt_defiled"
+          "name": "defiledlands:defiled_dirt"
         }
       ],
       "conditions": [

@@ -28,6 +28,9 @@ public class CorruptionHelper {
 
     public static boolean dungeonEnabled = true;
 
+    public static boolean altarEnabled = true;
+    public static int altarExtraRarity = 1;
+
     public static int spreadAttempts = 4;
 
     public static int spreadRange = 2;
